@@ -1,0 +1,25 @@
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install project dependencies
+RUN npm install json-server
+
+# Copy the rest of the application
+COPY . .
+
+# Ensure correct permissions
+RUN chmod +x $(which npx)
+
+# Expose port
+EXPOSE 5000
+
+# Set environment to development
+ENV NODE_ENV=development
+
+# Start JSON Server
+CMD ["npx", "json-server", "--watch", "db.json", "--port", "5000", "--host", "0.0.0.0"]
