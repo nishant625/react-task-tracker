@@ -11,7 +11,8 @@ function App() {
   const API_URL = process.env.VERCEL_ENV === 'production' 
     ? 'https://react-task-tracker-backend-latest.onrender.com' 
     : 'http://localhost:5000'
-
+ console.log(process.env.VERCEL_ENV);
+ 
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
