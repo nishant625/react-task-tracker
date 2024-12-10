@@ -8,10 +8,11 @@ function App() {
   const [tasks, setTasks] = useState([])
 
   // Update fetch URL for Docker networking
-  const API_URL = process.env.VERCEL_ENV === 'production' 
-    ? 'https://react-task-tracker-backend-latest.onrender.com' 
-    : 'http://localhost:5000'
- console.log(process.env.VERCEL_ENV);
+  const API_URL = process.env.REACT_APP_VERCEL_ENV === 'production' 
+  ? 'https://react-task-tracker-backend-latest.onrender.com' 
+  : 'http://localhost:5000';
+console.log(process.env.REACT_APP_VERCEL_ENV);
+
  
   useEffect(() => {
     const getTasks = async () => {
