@@ -24,10 +24,10 @@ jobs:
 
     - name: Build and Push Backend
       run: |
-        docker build -f Dockerfile.json-server -t <username>/react-task-tracker-backend:latest .
-        docker push <username>/react-task-tracker-backend:latest
+        docker build -f Dockerfile.json-server -t nishant625/react-task-tracker-backend:latest .
+        docker push nishant625/react-task-tracker-backend:latest
 
     - name: Build and Push Frontend
       run: |
-        docker build -f Dockerfile.frontend -t <username>/react-task-tracker-frontend:latest .
-        docker push <username>/react-task-tracker-frontend:latest
+        docker build -f Dockerfile.frontend -t nishant625/react-task-tracker-frontend:latest .
+        docker push nishant625/react-task-tracker-frontend:latest
